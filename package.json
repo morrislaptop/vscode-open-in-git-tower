@@ -1,0 +1,55 @@
+{
+    "name": "vscode-open-in-git-tower",
+    "displayName": "Open in Git Tower",
+    "description": "Open project in Git Tower",
+    "repository": "morrislaptop/vscode-open-in-git-tower",
+    "icon": "1024x1024.png",
+    "version": "0.6.0",
+    "publisher": "morrislaptop",
+    "engines": {
+        "vscode": "^1.16.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:openInGitTower.open"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "openInGitTower.open",
+                "title": "Open in Git Tower"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "openInGitTower.open"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "command": "openInGitTower.open"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.0",
+        "eslint": "^4.6.1",
+        "mocha": "^3.5.0",
+        "typescript": "^2.5.2",
+        "vscode": "^1.1.5"
+    },
+    "dependencies": {
+        "find-root": "^1.1.0",
+        "opn": "^5.3.0"
+    }
+}
